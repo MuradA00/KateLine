@@ -1,0 +1,53 @@
+.addiction {
+  &__inner {
+    margin-top: clamp(2.5rem, 3.125vw, var(--50-spc));
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: clamp(30px, 4.375vw, var(--70-spc));
+  }
+  &__image {
+    position: relative;
+    height: 100%;
+    img,
+    picture {
+      height: inherit;
+      width: inherit;
+    }
+  }
+  &__text-wrapper {
+    display: grid;
+    grid-gap: var(--20-spc);
+    p {
+      font-size: var(--20-spc);
+      line-height: 118%;
+    }
+  }
+  &__btn {
+    margin-top: var(--20-spc);
+  }
+}
+
+@include max-media(70.625em) {
+  .addiction {
+    &__body {
+      max-width: 45.875rem;
+      margin-inline: auto;
+
+    }
+    &__image {
+      width: 100%;
+      max-height: 21.375rem;
+    }
+    &__picture {
+      max-height: inherit;
+      img {
+        border-radius: 0px 0px 0px 100px;
+        max-height: inherit;
+      }
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}

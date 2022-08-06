@@ -1,0 +1,75 @@
+:root {
+  // FONTS
+
+  --ff: 'Jura', sans-serif;
+
+  // COLORS
+  --body-bg: hsla(0, 0%, 100%, 1);
+  --g-light: linear-gradient(180deg, rgba(110, 80, 164, 0.64) 0%, rgba(79, 109, 185, 0.64) 100%);
+  --g-bold: linear-gradient(180deg, rgba(0, 55, 195, 0.64) 0%, rgba(79, 109, 185, 0.64) 100%);
+  --btn-hover: linear-gradient(180deg, rgba(109, 41, 233, 0.64) 0%, rgba(30, 86, 230, 0.64) 100%);
+  --btn-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
+  --g-lighter: linear-gradient(180deg, #E3E3E3 0%, #B8B8B8 100%);
+  --clr-black: hsla(0, 0%, 0%, 1);
+  --clr-white: hsla(0, 0%, 100%, 1);
+  --clr-light: hsla(0, 0%, 96%, 1);
+
+  // SPACING
+  --12-spc: 0.75rem;
+  --16-spc: 1rem;
+  --18-spc: 1.125rem;
+  --20-spc: 1.25rem;
+  --24-size: 1.5rem;
+  --30-spc: 1.875rem;
+  --50-spc: 3.125rem;
+  --70-spc: 4.375rem;
+  --large-spc: 5.5rem;
+}
+
+$tablet-media: 56.25em;
+$mob-media: 31.25em;
+
+._container {
+  max-width: 80.375em;
+  padding: 0 var(--20-spc);
+  margin-inline: auto;
+}
+
+._light-btn {
+  display: inline-flex;
+  @include dfc;
+  text-align: center;
+  padding: var(--16-spc) var(--30-spc);
+  box-shadow: var(--btn-shadow);
+  background: var(--g-light);
+  font-size: clamp(var(--18-spc), 1.5vw, 24px);
+  font-weight: 400;
+  color: var(--clr-white);
+  position: relative;
+  &::before {
+    @include psevdo;
+    background: var(--btn-hover);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    // opacity: 0;
+    transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  &:disabled {
+    background: linear-gradient(180deg, rgba(126, 126, 126, 0.64) 0%, rgba(60, 67, 85, 0.64) 100%);
+    pointer-events: none;
+  }
+}
+
+._spacing-section {
+  margin-top: 5rem;
+}
+
+
+
+

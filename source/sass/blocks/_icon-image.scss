@@ -1,0 +1,10 @@
+._icon-block {
+  padding: clamp(1.25rem, 1.875vw, 30px);
+  background: var(--g-light);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  aspect-ratio: 1 / 1;
+  backdrop-filter: blur(20px);
+  z-index: 10;
+}

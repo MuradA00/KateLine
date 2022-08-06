@@ -1,0 +1,51 @@
+.coop {
+  &__title {
+    margin-inline: auto;
+    text-align: center;
+  }
+  &__inner {
+    margin-top: clamp(2.5rem, 3.125vw, var(--50-spc));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: clamp(30px, 4.375vw, var(--70-spc));
+  }
+  &__descr {
+    display: grid;
+    grid-gap: var(--16-spc);
+    p {
+      font-size: var(--20-spc);
+      line-height: 115%;
+    }
+  }
+  &__btn {
+    margin-top: var(--24-size);
+  }
+  &__image {
+    min-width: 41.25rem;
+    position: relative;
+    max-height: 27.5rem;
+  }
+}
+
+@include max-media(70.625em) {
+  .coop {
+    &__body {
+      max-width: 45.875rem;
+      margin-inline: auto;
+    }
+    &__inner {
+      grid-template-columns: 100%;
+    }
+    &__image {
+      width: 100%;
+      height: fit-content;
+      overflow: hidden;
+      min-width: auto;
+      img,
+      picture {
+        width: inherit;
+        height: fit-content;
+      }
+    }
+  }
+}

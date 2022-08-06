@@ -1,0 +1,57 @@
+.header {
+  padding: var(--20-spc) 0;
+  background-color: var(--clr-light);
+  &__body {
+    @include dfsb;
+  }
+  &__options,
+  .header__lang-block {
+    @include dfsb;
+  }
+  &__options {
+    grid-gap: clamp(2.5rem, 4.8125vw, 77.5px);
+  }
+  &__lang-hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease, max-height 300ms ease;
+  }
+  &__lang-chosen {
+    cursor: pointer;
+    &:hover .header__lang-hidden {
+      max-height: 100%;
+      opacity: 1;
+    }
+    img {
+      transition: transform 300ms ease;
+      width: 13.5px;
+      height: 8.5px;
+    }
+    &:hover img {
+      transform: rotate(180deg)
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include al-flex;
+    grid-gap: clamp(2rem, 5.5vw, var(--large-spc));
+  }
+  &__link {
+    position: relative;
+  }
+  .--is-active {
+    background: var(--g-light);
+    padding: var(--16-spc) 1.875rem;
+    box-shadow: var(--btn-shadow);
+    color: var(--clr-white);
+  }
+}
+
+@include max-media($tablet-media) {
+  .nav {
+    display: none;
+  }
+}
