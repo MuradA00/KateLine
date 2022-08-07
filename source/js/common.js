@@ -21,6 +21,15 @@ let lightningRow = new Swiper(".lightning__row", {
 });
 
 
+let worksRow = new Swiper(".works__inner", {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    effect: 'fade',
+    speed: 500,
+    fadeEffect: { crossFade: true },
+});
+
+
 
 function init() {
   new SmoothScroll(document, 120, 15);
@@ -91,4 +100,22 @@ function SmoothScroll(target, speed, smooth) {
 }
 
 window.addEventListener("DOMContentLoaded", init);
+
+const modalTriggers = document.querySelectorAll('.trigger-modal')
+const modal = document.getElementById('modal')
+const closeIcon = document.querySelector('.modal__close')
+
+for(let i = 0; i < modalTriggers.length; i++) {
+  const modalButton = modalTriggers[i];
+  modalButton.addEventListener('click', function() {
+    modal.classList.add('--show-modal')
+  })
+  closeIcon.addEventListener('click', () => {
+    closeModal();
+  })
+}
+
+function closeModal() {
+  modal.classList.remove('--show-modal')
+}
 

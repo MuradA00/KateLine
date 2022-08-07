@@ -57,11 +57,12 @@
     color: var(--clr-white);
     box-shadow: var(--btn-shadow);
   }
-  ._light-link {
-    background-image: var(--g-light);
-    backdrop-filter: blur(15px);
-  }
-  ._bold-link {
-    background-image: var(--g-bold);
-  }
+}
+
+._light-link {
+  background-image: var(--g-light);
+  backdrop-filter: blur(15px);
+}
+._bold-link {
+  background-image: var(--g-bold);
 }
