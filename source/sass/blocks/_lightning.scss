@@ -1,11 +1,14 @@
 .lightning {
   &__container {
     padding-top: 8px;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   &__title {
     margin-bottom: var(--50-spc);
     text-align: center;
+    &::before {
+      width: 13.75rem;
+    }
   }
   &__text-wrapper {
     max-width: 62.875rem;
@@ -29,6 +32,7 @@
     max-height: 31.25rem;
     img,
     picture {
+      width: 100%;
       height: 100%;
       min-height: 31.25rem;
     }
@@ -40,6 +44,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+
     &:hover::before {
       opacity: 1;
     }
@@ -56,6 +61,30 @@
       backdrop-filter: blur(10px);
       opacity: 0;
       transition: opacity 500ms ease;
+
+    }
+    &::after {
+      @include psevdo;
+      content: '';
+      background-image: url('../../img/cursor-icon.png');
+      background-size: 88px 88px;
+      width: 88px;
+      height: 88px;
+      right: 15px;
+      bottom: 15px;
+      animation: cursorAnim 2s infinite ease;
+      z-index: 1;
+    }
+    @keyframes cursorAnim {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   }
   &__info {
@@ -105,3 +134,17 @@
     }
   }
 }
+
+._disable-anim {
+  &::after {
+    transition: all 500ms ease-in-out;
+    transform: translateX(1000%);
+  }
+}
+
+._active-anim {
+  &::after {
+    transform: translateX(0);
+  }
+}
+

@@ -1,0 +1,129 @@
+.home {
+  position: relative;
+  &__container {
+    max-width: 81.625rem;
+    margin-inline: auto;
+    position: relative;
+  }
+  &__image {
+    position: relative;
+  }
+  &__slider {
+    margin-left: 18.125rem;
+    max-width: 58.125rem;
+    position: relative;
+  }
+  &__body {
+    @include al-flex;
+  }
+  &__picture {
+    height: 42.375rem;
+    img,
+    picture {
+      height: 100%;
+      border-bottom-left-radius: 9.375rem;
+      border-top-right-radius: 9.375rem;
+    }
+  }
+  &__icon {
+    width: 6.5625rem;
+    height: 6.5625rem;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.descr-block {
+  padding: clamp(55px, 5.9375vw, 95px) 3.75rem;
+  background: linear-gradient(180deg, rgba(110, 80, 164, 0.64) 0%, rgba(79, 109, 185, 0.64) 100%);
+  max-width: 32.8125rem;
+  backdrop-filter: blur(15px);
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
+  & > * {
+    color: var(--clr-white);
+  }
+  &__title {
+    &::before {
+      background-color: var(--clr-white);
+      width: clamp(125px, 12.7vw, 203px);
+    }
+  }
+  &__info {
+    margin-top: 0.9375rem;
+    p {
+      font-size: 1.5rem;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 1.6875rem;
+  }
+}
+
+.home-slider {
+  overflow: hidden;
+  max-height: 42.375rem;
+}
+
+@include max-media(62.5em) {
+  .home {
+    &__slider {
+      margin-left: 0;
+      max-width: 100%;
+    }
+    &__image {
+      picture,
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .home-dots {
+    display: none;
+  }
+}
+
+@include max-media(37.5em) {
+  .home {
+    &__picture {
+      img,
+      picture {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+  .descr-block {
+    max-width: 18.25rem;
+    padding: 2.25rem 9px 2.25rem 1.25rem;
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__info {
+      p {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.home-dots {
+  margin-left: 38px;
+  margin-right: 15px;
+  &__inner {
+    display: grid;
+    grid-gap: 13px;
+  }
+  .swiper-pagination-bullet {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+}

@@ -3,7 +3,10 @@ let lightningRow = new Swiper(".lightning__row", {
     spaceBetween: 20,
     speed: 700,
     fadeEffect: { crossFade: true },
-
+    pagination: {
+      el: '.dots__inner',
+      clickable: true,
+    },
     breakpoints: {
       688: {
         slidesPerView: 2,
@@ -27,6 +30,20 @@ let worksRow = new Swiper(".works__inner", {
     effect: 'fade',
     speed: 500,
     fadeEffect: { crossFade: true },
+});
+
+let homeSlider = new Swiper(".home__inner", {
+    slidesPerView: 'auto',
+    direction: 'vertical',
+    spaceBetween: 20,
+    effect: 'fade',
+    allowTouchMove: false,
+    speed: 500,
+    fadeEffect: { crossFade: true },
+    pagination: {
+      el: '.home-dots__inner',
+      clickable: true,
+    },
 });
 
 

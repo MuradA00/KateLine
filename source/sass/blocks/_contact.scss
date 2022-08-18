@@ -3,7 +3,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: clamp(3.125rem, 7.3125vw, 117px) 0 clamp(3.125rem, 9.4375vw, 151px);
+  padding: 7.3125rem 0 9.4375rem;
+  @include max-media(48em) {
+    padding: 4.375rem 0 5.3125rem;
+  }
   &__body {
     max-width: 71.75rem;
     margin-inline: auto;
@@ -17,6 +20,12 @@
     grid-gap: var(--20-spc);
     @include max-media(71.875em) {
       flex-direction: column;
+    }
+  }
+  &__title {
+    color: var(--clr-white);
+    &::before {
+      background-color: var(--clr-white);
     }
   }
   &__inputs {
