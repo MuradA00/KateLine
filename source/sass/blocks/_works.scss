@@ -59,18 +59,14 @@
       max-height: 332px;
     }
     &__descr {
-      // transition: all 500ms ease-in-out;
-      // position: absolute;
-      // width: 80%;
-      // height: fit-content;
-      // top: 70%;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-      // z-index: 10;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
       padding: 20px 15px;
-      margin: 15px;
-      background-image: var(--g-light);
+      background: linear-gradient(180deg, rgba(110, 80, 164, 0.3) 0%, rgba(79, 109, 185, 0.3) 100%);
+      backdrop-filter: blur(15px);
       max-width: 18.0625rem;
+      z-index: 999;
     }
   }
   .hidden-descr {

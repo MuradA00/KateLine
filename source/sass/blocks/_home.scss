@@ -1,5 +1,4 @@
 .home {
-  position: relative;
   &__container {
     max-width: 81.625rem;
     margin-inline: auto;
@@ -15,6 +14,7 @@
   }
   &__body {
     @include al-flex;
+    position: relative;
   }
   &__picture {
     height: 42.375rem;
@@ -23,6 +23,7 @@
       height: 100%;
       border-bottom-left-radius: 9.375rem;
       border-top-right-radius: 9.375rem;
+      pointer-events: none;
     }
   }
   &__icon {
@@ -43,7 +44,6 @@
   position: absolute;
   left: 0;
   z-index: 999;
-  top: 50%;
   transform: translateY(-50%);
   & > * {
     color: var(--clr-white);
@@ -91,7 +91,7 @@
   }
 }
 
-@include max-media(37.5em) {
+@include max-media(48em) {
   .home {
     &__picture {
       img,
@@ -104,6 +104,7 @@
   .descr-block {
     max-width: 18.25rem;
     padding: 2.25rem 9px 2.25rem 1.25rem;
+    bottom: 45px;
     &__title {
       font-size: 1.5rem;
     }
@@ -126,4 +127,10 @@
     width: 0.9375rem;
     height: 0.9375rem;
   }
+}
+
+.--fade-left {
+  transform: translateX(-50px) !important;
+  opacity: 0 !important;
+  pointer-events: none;
 }

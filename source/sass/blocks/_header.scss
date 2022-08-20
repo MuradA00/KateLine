@@ -1,7 +1,6 @@
 .header {
   padding: var(--20-spc) 0;
-  transition: all 500ms ease-in-out;
-  background: hsla(0, 0%, 96%, 1);
+  transition: transform .5s cubic-bezier(.77, .2, .05, 1), opacity .55s ease, -webkit-transform .5s cubic-bezier(.77, .2, .05, 1);
   z-index: 999;
   &__body {
     display: flex;
@@ -21,6 +20,11 @@
   .header__lang-block {
     @include dfsb;
   }
+  &__lang-block {
+    &:hover img {
+      transform: scaleY(-1);
+    }
+  }
   &__lang-block:hover .header__lang-hidden {
     opacity: 1;
     max-height: 100%;
@@ -38,9 +42,10 @@
     grid-gap: 9.5px;
     margin-left: 38px;
     span {
+      transition: all 500ms ease;
       background-color: var(--clr-black);
       width: 36px;
-      height: 1.5px;
+      height: 1px;
       display: block;
     }
   }
@@ -54,9 +59,6 @@
     cursor: pointer;
     img {
       transition: transform 300ms ease;
-    }
-    &:hover img {
-      transform: scaleY(-1);
     }
   }
 }
@@ -121,6 +123,23 @@
   .header {
     &__burger {
       display: none;
+    }
+  }
+}
+
+._burger-active {
+  .mob-menu {
+    span {
+      &:first-child {
+        transform: rotate(45deg) translateY(11px);
+      }
+      &:nth-child(2) {
+        transform-origin: 0 100%;
+        transform: rotate(0deg) scale(0);
+      }
+      &:last-child {
+        transform: rotate(-45deg) translate(4px, -15px);
+      }
     }
   }
 }
