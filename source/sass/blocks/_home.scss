@@ -43,7 +43,7 @@
   backdrop-filter: blur(15px);
   position: absolute;
   left: 0;
-  z-index: 999;
+  z-index: 800;
   transform: translateY(-50%);
   & > * {
     color: var(--clr-white);
@@ -133,4 +133,21 @@
   transform: translateX(-50px) !important;
   opacity: 0 !important;
   pointer-events: none;
+}
+
+@include max-media(34.375em) {
+  .home {
+    &__icon {
+      display: none;
+    }
+    &__body {
+      height: calc(100vh - 91px);
+      background-image: url('../../img/home/home-slider.png');
+      background-size: cover;
+      background-position: center;
+    }
+    &__slider {
+      display: none;
+    }
+  }
 }
