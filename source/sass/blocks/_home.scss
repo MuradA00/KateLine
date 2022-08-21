@@ -142,9 +142,10 @@
     }
     &__body {
       height: calc(100vh - 91px);
-      background-image: url('../../img/home/home-slider.png');
+      background-image: url('../../img/home/home-image-mob.png');
       background-size: cover;
-      background-position: center;
+      background-position: 95%;
+      background-repeat: no-repeat;
     }
     &__slider {
       display: none;
