@@ -7,6 +7,9 @@
   &__image {
     position: relative;
   }
+  &__icon {
+    overflow: hidden;
+  }
   &__slider {
     margin-left: 18.125rem;
     max-width: 58.125rem;
@@ -15,6 +18,7 @@
   &__body {
     @include al-flex;
     position: relative;
+    height: calc(100vh - 79px);
   }
   &__picture {
     height: 42.375rem;

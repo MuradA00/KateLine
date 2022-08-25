@@ -36,14 +36,16 @@
       position: relative;
       &::before {
         @include psevdo;
-        width: 100%;
-        height: 110%;
+        width: 0%;
+        height: 0%;
         right: 10px;
         border: 2px solid #9D8AC1;
         opacity: 0;
-        transition: opacity 500ms ease;
+        transition: all 500ms ease;
       }
       &:hover::before {
+        width: 100%;
+        height: 110%;
         opacity: 1;
       }
       &:nth-child(1) {

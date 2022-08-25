@@ -46,6 +46,23 @@ let homeSlider = new Swiper(".home__inner", {
     },
 });
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+const setHeight = () => {
+  document.getElementById("home").style.minHeight = window.innerHeight + "px"
+};
+let deviceWidth = window.matchMedia("(max-width: 4000px)");
+if (deviceWidth.matches) {
+  window.addEventListener("resize", setHeight);
+  setHeight();
+}
 
 
 // function init() {
@@ -137,3 +154,15 @@ function closeModal() {
 }
 
 AOS.init();
+
+const navLinks = document.querySelectorAll('.nav__link')
+
+for(let i = 0; i < navLinks.length; i++) {
+ const navLink = navLinks[i];
+ navLink.addEventListener('mouseover', () => {
+  navLink.classList.add('--is-active')
+ })
+ navLink.addEventListener('mouseout', () => {
+  navLink.classList.remove('--is-active')
+ })
+}

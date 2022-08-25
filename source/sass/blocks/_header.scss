@@ -15,6 +15,9 @@
   &__navigation {
     margin-left: clamp(30px, 16.625vw, 266px);
   }
+  &__call {
+    display: none;
+  }
   &__options,
   .header__lang-block {
     @include dfsb;
@@ -77,6 +80,7 @@
   .--is-active {
     color: var(--clr-white);
     position: relative;
+    // transition: all 500ms ease-in-out;
     &::before {
       @include psevdo;
       width: 191px;
@@ -88,6 +92,7 @@
       // margin: var(--16-spc) 1.875rem;
       box-shadow: var(--btn-shadow);
       z-index: -1;
+      transition: all .3s ease-in-out;
     }
   }
 }
@@ -115,6 +120,7 @@
   }
   .header__call {
     order: -1;
+    display: block;
   }
   .header__burger {
     margin-left: 25px;

@@ -3,11 +3,7 @@ body {
   padding: 0;
   color: var(--clr-black);
   background-color: var(--body-bg);
-  // background-image: url('../../img/body-image.png');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-attachment: fixed;
+  scroll-behavior: smooth;
   width: 100%;
   position: relative;
   font-family: inherit;

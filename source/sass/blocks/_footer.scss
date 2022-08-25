@@ -91,11 +91,37 @@
 
 @include max-media(34.375em) {
   .footer {
+    & > * {
+      font-size: 20px;
+    }
     &__body {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(12, 1fr);
     }
     &__links {
-      grid-column: span 4;
+      grid-column: 3 / 10;
+      grid-row: initial;
+      grid-gap: 1.875rem;
+    }
+    &__social {
+      margin-top: 0;
+      grid-row: 1;
+      grid-column: 12 / 14;
+    }
+    &__contact {
+      grid-column: 3 / -1;
+      grid-row: 3;
+      margin-top: 56px;
+      grid-gap: 1.875rem;
+    }
+
+    &__articles {
+      margin-top: 56px;
+      grid-row: 4;
+      flex-direction: column;
+      grid-column: 3 / -1;
+      align-items: flex-start;
+      text-align: left;
+      grid-gap: 1.875rem;
     }
   }
 }
