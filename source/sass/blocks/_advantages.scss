@@ -28,26 +28,83 @@
       font-size: var(--20-spc);
       line-height: 115%;
     }
+    @keyframes bg {
+      0% {
+          background-size:    0 3px,
+                              3px 0,
+                              0 3px,
+                              3px 0;
+      }
+      25% {
+          background-size:    100% 3px,
+                              3px 0,
+                              0 3px,
+                              3px 0;
+      }
+      50% {
+          background-size:    100% 3px,
+                              3px 100%,
+                              0 3px,
+                              3px 0;
+      }
+      75% {
+          background-size:    100% 3px,
+                              3px 100%,
+                              100% 3px,
+                              3px 0;
+      }
+      100% {
+          background-size:    100% 3px,
+                              3px 100%,
+                              100% 3px,
+                              3px 100%;
+      }
+  }
+
+  @keyframes bgDisable {
+    100% {
+      background-size:  100% 3px,
+      3px 100%,
+      100% 3px,
+      3px 100%;
+  }
+  75% {
+      background-size:
+      100% 3px,
+      3px 100%,
+      100% 3px,
+      3px 0;
+  }
+  50% {
+      background-size:   100% 3px,
+      3px 100%,
+      0 3px,
+      3px 0;
+  }
+  25% {
+      background-size:     100% 3px,
+      3px 0,
+      0 3px,
+      3px 0;
+  }
+  0% {
+      background-size:0 3px,
+      3px 0,
+      0 3px,
+      3px 0;
+  }
+  }
+
     &__item {
       text-align: center;
       display: grid;
       grid-gap: 10px;
       justify-content: center;
       position: relative;
-      &::before {
-        @include psevdo;
-        width: 0%;
-        height: 0%;
-        right: 10px;
-        border: 2px solid #9D8AC1;
-        opacity: 0;
-        transition: all 500ms ease;
-      }
+
       &:hover::before {
-        width: 100%;
-        height: 110%;
-        opacity: 1;
-      }
+        animation-play-state: running;
+    }
       &:nth-child(1) {
         flex: 0 0 32.5%;
       }
@@ -56,6 +113,66 @@
       }
       flex: 1 1 25.333%;
     }
+  }
+}
+
+._animOn {
+  position: relative;
+  &::before {
+    @include psevdo;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -11px;
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%);
+    background-size:    100% 2px,
+                        2px 100%,
+                        100% 2px,
+                        2px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    animation: bg 1s ease;
+    animation-play-state: paused;
+
+  }
+}
+
+._animOff {
+  &::before {
+    @include psevdo;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -11px;
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%);
+    background-size:    100% 2px,
+                        2px 100%,
+                        100% 2px,
+                        2px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    animation: bgDisable 1s ease reverse;
+    opacity: 0;
+    transition-delay: 1s;
+
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
   }
 }
 
@@ -81,5 +198,66 @@
 @include max-media(43em) {
   .advantages-list {
     grid-gap: 40px 52px !important;
+  }
+}
+
+._mobAnimOn {
+  &::before {
+    @include psevdo;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                        linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%);
+    background-size:    100% 2px,
+                        2px 100%,
+                        100% 2px,
+                        2px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    animation: bg 1s ease;
+  }
+}
+
+.mobAnimOff {
+  @include psevdo;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -11px;
+  background-repeat: no-repeat;
+  background-image:   linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                      linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%),
+                      linear-gradient(to right, #6E50A4 100%, #4F6DB9 100%),
+                      linear-gradient(to bottom, #6E50A4 100%, #4F6DB9 100%);
+  background-size:    100% 2px,
+                      2px 100%,
+                      100% 2px,
+                      2px 100%;
+  background-position:    0 0,
+                          100% 0,
+                          100% 100%,
+                          0 100%;
+  animation: bgDisable 1s ease reverse;
+  opacity: 0;
+  transition-delay: 1s;
+}
+
+
+@include max-media(71.875em) {
+  ._animOff,
+  ._animOn {
+    &::before {
+      left: 0;
+    }
+  }
+  .advantages-list__icon {
+    max-width: 100% !important;
   }
 }

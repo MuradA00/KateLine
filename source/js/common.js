@@ -55,14 +55,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-const setHeight = () => {
-  document.getElementById("home").style.minHeight = window.innerHeight + "px"
-};
-let deviceWidth = window.matchMedia("(max-width: 4000px)");
-if (deviceWidth.matches) {
-  window.addEventListener("resize", setHeight);
-  setHeight();
-}
 
 
 // function init() {
@@ -165,4 +157,48 @@ for(let i = 0; i < navLinks.length; i++) {
  navLink.addEventListener('mouseout', () => {
   navLink.classList.remove('--is-active')
  })
+}
+
+
+const desktopBreakpoint = window.matchMedia("(min-width: 550px)")
+const mobBreakpoint = window.matchMedia("(max-width: 549px)")
+
+if (desktopBreakpoint.matches === true) {
+  const advItems = document.querySelectorAll('.advantages-list__item')
+  console.log('dalbaeb')
+  for(let i = 0; i < advItems.length; i++) {
+    const adItem = advItems[i];
+    adItem.addEventListener('mouseover', function() {
+      adItem.classList.add('_animOn')
+      adItem.classList.remove('_animOff')
+    })
+    adItem.addEventListener('mouseout', function() {
+      adItem.classList.remove('_animOn')
+      adItem.classList.add('_animOff')
+    })
+  }
+}
+
+if (mobBreakpoint.matches === true ) {
+  var blocks = document.querySelectorAll('.advantages-list__item');
+console.log(blocks);
+window.addEventListener('scroll', checkBoxes);
+checkBoxes();
+
+function checkBoxes() {
+  var triggerBottom = window.innerHeight / 6 * 3;
+  blocks.forEach(function (block) {
+    var blockTop = block.getBoundingClientRect().top;
+
+    if (blockTop < triggerBottom) {
+      blocks.forEach(item => item.classList.remove('_mobAnimOn'))
+      block.classList.add('_mobAnimOn');
+      block.classList.remove('_mobAnimOff')
+    }
+    if (blockTop == triggerBottom) {
+      block.classList.remove('_mobAnimOn');
+      block.classList.add('_mobAnimOff')
+    }
+  });
+}
 }
