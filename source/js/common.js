@@ -28,8 +28,12 @@ let worksRow = new Swiper(".works__inner", {
     slidesPerView: 'auto',
     spaceBetween: 20,
     effect: 'fade',
-    speed: 500,
+    speed: 700,
     fadeEffect: { crossFade: true },
+    navigation: {
+      nextEl: '._btn-next',
+      prevEl: '._btn-prev',
+    },
 });
 
 let homeSlider = new Swiper(".home__inner", {
@@ -201,4 +205,19 @@ function checkBoxes() {
     }
   });
 }
+}
+
+
+const homeBody = document.querySelector('.home__body')
+
+
+
+
+const setHeight = () => {
+  document.getElementById("home-page").style.minHeight = window.innerHeight + "px"
+};
+let deviceWidth = window.matchMedia("(max-width: 4000px)");
+if (deviceWidth.matches) {
+  window.addEventListener("resize", setHeight);
+  setHeight();
 }

@@ -18,7 +18,6 @@
   &__body {
     @include al-flex;
     position: relative;
-    height: calc(100vh - 79px);
   }
   &__picture {
     height: 42.375rem;
@@ -145,7 +144,6 @@
       display: none;
     }
     &__body {
-      height: calc(100vh - 91px);
       background-image: url('../../img/home/home-image-mob.png');
       background-size: cover;
       background-position: 95%;
