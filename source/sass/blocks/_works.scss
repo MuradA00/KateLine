@@ -178,3 +178,30 @@
     }
   }
 }
+
+._visible-image {
+  display: block !important;
+}
+
+@include max-media(51.5625em) {
+  .works-row {
+    &__wrapper {
+      max-width: 17.1875rem;
+      &:nth-child(3) {
+        display: none;
+      }
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+}
+
+@include min-media(51.5625em) {
+  ._visible-image {
+    display: none;
+  }
+  ._hidden-photos {
+    display: none !important;
+  }
+}

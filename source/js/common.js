@@ -169,7 +169,6 @@ const mobBreakpoint = window.matchMedia("(max-width: 549px)")
 
 if (desktopBreakpoint.matches === true) {
   const advItems = document.querySelectorAll('.advantages-list__item')
-  console.log('dalbaeb')
   for(let i = 0; i < advItems.length; i++) {
     const adItem = advItems[i];
     adItem.addEventListener('mouseover', function() {
@@ -221,3 +220,30 @@ if (deviceWidth.matches) {
   window.addEventListener("resize", setHeight);
   setHeight();
 }
+
+const createSlider = () => {
+
+}
+
+const hamb = 3;
+const fries = 3;
+const coke = 0;
+const nuggets = 10;
+
+if (hamb === 3 && coke === 2 || fries === 3 && nuggets) {
+  console.log('Все довольны');
+} else {
+  console.log('Мы уходим.')
+}
+
+console.log(hamb === 3 && (coke === 2 || fries === 3 ) && nuggets);
+
+
+const buttons = document.querySelectorAll('.nav__item')
+
+for(let i = 0; i < buttons.length; i++) {
+  const btn = buttons[i];
+  console.log(btn)
+}
+
+console.log()
