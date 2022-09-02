@@ -67,6 +67,7 @@
     box-shadow: var(--btn-shadow);
     backdrop-filter: blur(24px);
     position: relative;
+    z-index: 50;
     &::before {
       @include psevdo;
       width: 100%;
@@ -74,9 +75,8 @@
       top: 0;
       left: 0;
       filter: blur(50px);
-      z-index: 10;
+      z-index: -1;
       background: linear-gradient(180deg, rgba(0, 55, 195, 0.64) 0%, rgba(79, 109, 185, 0.64) 100%);
-
     }
   }
 }

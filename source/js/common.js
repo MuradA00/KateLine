@@ -27,9 +27,7 @@ let lightningRow = new Swiper(".lightning__row", {
 let worksRow = new Swiper(".works__inner", {
     slidesPerView: 'auto',
     spaceBetween: 20,
-    effect: 'fade',
-    speed: 700,
-    fadeEffect: { crossFade: true },
+    speed: 800,
     navigation: {
       nextEl: '._btn-next',
       prevEl: '._btn-prev',
@@ -221,29 +219,89 @@ if (deviceWidth.matches) {
   setHeight();
 }
 
-const createSlider = () => {
 
+for(let i = 0; i < 3; i++) {
+  console.log(i);
+  for (let j = 0; j < 3; j++) {
+    console.log(j);
+
+  }
 }
 
-const hamb = 3;
-const fries = 3;
-const coke = 0;
-const nuggets = 10;
+// *
+// **
+// ***
+// ****
+// *****
+// ******
 
-if (hamb === 3 && coke === 2 || fries === 3 && nuggets) {
-  console.log('Все довольны');
-} else {
-  console.log('Мы уходим.')
+
+let result = '';
+const length = 7;
+
+for (let i = 1; i < length; i++) {
+
+  for (let j = 0; j < 1; j++) {
+    result += '*';
+  }
+
+  result += '\n';
 }
 
-console.log(hamb === 3 && (coke === 2 || fries === 3 ) && nuggets);
+console.log(result);
 
-
-const buttons = document.querySelectorAll('.nav__item')
-
-for(let i = 0; i < buttons.length; i++) {
-  const btn = buttons[i];
-  console.log(btn)
+function calc(a, b) {
+  return a + b;
 }
 
-console.log()
+console.log(calc(1, 2))
+
+function ret() {
+  let num = 50;
+  let thirdNum = 30;
+  let fourthNum = 21;
+  return num;
+}
+
+const secondNum = ret() ;
+console.log(secondNum);
+
+let makeDinner = function(a, b) {
+  return (a + b);
+}
+
+const resultDinner = makeDinner(1, 2);
+
+console.log(resultDinner)
+
+logger();
+
+const logger = function() {
+
+};
+
+let usdCurr = 28;
+    eurCurr = 38;
+    discount = 0.9;
+
+function convert(amount, currency) {
+  return currency * amount;
+}
+
+function promotion(result) {
+  console.log(result * discount);
+}
+
+const convertTotal = convert(500, usdCurr);
+
+promotion(convertTotal);
+
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return;
+  }
+  console.log('Yes')
+}
+
+test();

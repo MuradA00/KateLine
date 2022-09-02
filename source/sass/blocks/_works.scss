@@ -1,10 +1,12 @@
 .works {
+
   &__container {
     overflow: hidden;
     position: relative;
   }
   &__body {
     max-width: 65rem;
+    overflow: hidden;
     margin-inline: auto;
   }
   &__inner {
@@ -62,16 +64,13 @@
     display: flex;
     flex-wrap: wrap;
     grid-gap: 20px;
+    overflow: hidden;
     &__wrapper {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      // overflow: hidden;
+      overflow: hidden;
       position: relative;
       &:hover::before {
         opacity: 1;
       }
-
       img,
       picture {
         max-height: 332px;
@@ -91,16 +90,26 @@
         flex: 0 1 38.375rem;
       }
     }
+    &__button {
+      margin-left: auto;
+      transform: translate(0, 100%);
+      z-index: 100;
+      opacity: 0;
+      transition: all 500ms ease-in-out;
+    }
     &__wrapper {
       max-height: 332px;
       display: grid;
       align-items: flex-end;
       &:hover .works-row__descr {
+        max-height: 100%;
+      }
+      &:hover .works-row__button {
         opacity: 1;
+        transform: translate(0, 25px);
       }
     }
     &__image {
-      z-index: 5;
       height: 100%;
       max-height: 332px;
     }
@@ -112,7 +121,8 @@
       background: linear-gradient(180deg, rgba(110, 80, 164, 0.3) 0%, rgba(79, 109, 185, 0.3) 100%);
       backdrop-filter: blur(15px);
       max-width: 18.0625rem;
-      z-index: 999;
+      max-height: calc(100% - 187px);
+      transition: all 1s ease;
     }
   }
   .hidden-descr {
@@ -209,8 +219,19 @@
 @include max-media(38.125em) {
   .works-row {
     display: inline-block !important;
+    &__button {
+      font-size: 0.9375rem;
+      transform: translate(0, 15px) !important;
+      opacity: 1 !important;
+    }
+    &__descr {
+      padding: 13px 6px !important;
+      max-width: 14.0625rem !important;
+      max-height: 100% !important;
+    }
+
     &__wrapper {
-      max-width: 335px;
+      max-width: 100%;
       margin-inline: auto;
       &:nth-child(1) {
         flex: unset !important;
@@ -219,6 +240,7 @@
         display: none;
       }
     }
+
     ._visible-image {
       flex: 0 0 auto !important;
       .works-row__image {
@@ -233,6 +255,11 @@
       }
     }
   }
+  .hidden-descr {
+    &__info {
+      font-size: 0.9375rem !important;
+    }
+  }
 }
 
 @include min-media(38.125em) {
@@ -240,3 +267,5 @@
     display: none !important;
   }
 }
+
+
