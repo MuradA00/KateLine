@@ -25,8 +25,9 @@
   &__contact {
     // grid-template: 'contact';
     display: flex;
+    flex-wrap: wrap;
     grid-column: 12 / 24;
-    grid-gap: 2.625rem;
+    grid-gap: 15px 2.625rem;
   }
   &__articles {
     // grid-template: 'aticles';

@@ -118,6 +118,11 @@
   z-index: 999;
   transition: all 500ms ease;
   animation: fadeDown .4s ease-in-out;
+  .nav__item {
+    &:nth-child(4) {
+      display: none;
+    }
+  }
   @keyframes fadeDown {
     from {
       opacity: 0;
