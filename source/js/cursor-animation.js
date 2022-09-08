@@ -1,4 +1,4 @@
-const blockGallery = document.querySelectorAll('.lightning-list__item')
+const blockGallery = document.querySelectorAll('.lightning-list__item');
 
 for(let i = 0; i < blockGallery.length; i ++) {
   const blockImage = blockGallery[i];

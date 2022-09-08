@@ -1,6 +1,5 @@
 :root {
   // FONTS
-
   --ff: 'Jura', sans-serif;
 
   // COLORS
@@ -46,7 +45,10 @@ $mob-media: 31.25em;
   font-weight: 400;
   color: var(--clr-white);
   position: relative;
-
+  transition: background 500ms ease;
+  &:active {
+    background: linear-gradient(180deg, rgba(126, 126, 126, 0.64) 0%, rgba(60, 67, 85, 0.64) 100%);
+  }
   &::before {
     @include psevdo;
     background: var(--btn-hover);
@@ -57,14 +59,10 @@ $mob-media: 31.25em;
     height: 100%;
     z-index: -1;
     // opacity: 0;
-    transition: opacity 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: opacity .1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
   &:hover::before {
     opacity: 1;
-  }
-  &:disabled {
-    background: linear-gradient(180deg, rgba(126, 126, 126, 0.64) 0%, rgba(60, 67, 85, 0.64) 100%);
-    pointer-events: none;
   }
 }
 

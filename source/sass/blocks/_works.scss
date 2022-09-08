@@ -92,10 +92,9 @@
     }
     &__button {
       margin-left: auto;
-      transform: translate(0, 100%);
       z-index: 100;
-      opacity: 0;
       transition: all 500ms ease-in-out;
+      margin-top: 1rem;
     }
     &__wrapper {
       max-height: 332px;
@@ -103,10 +102,6 @@
       align-items: flex-end;
       &:hover .works-row__descr {
         max-height: 100%;
-      }
-      &:hover .works-row__button {
-        opacity: 1;
-        transform: translate(0, 25px);
       }
     }
     &__image {
@@ -121,7 +116,6 @@
       background: linear-gradient(180deg, rgba(110, 80, 164, 0.3) 0%, rgba(79, 109, 185, 0.3) 100%);
       backdrop-filter: blur(15px);
       max-width: 18.0625rem;
-      max-height: calc(100% - 187px);
       transition: all 1s ease;
     }
   }
@@ -221,7 +215,6 @@
     display: inline-block !important;
     &__button {
       font-size: 0.9375rem;
-      transform: translate(0, 15px) !important;
       opacity: 1 !important;
     }
     &__descr {
@@ -229,8 +222,14 @@
       max-width: 14.0625rem !important;
       max-height: 100% !important;
     }
-
+    &__image {
+      min-height: 31.25rem;
+      img, picture {
+        min-height: 31.25rem;
+      }
+    }
     &__wrapper {
+      min-height: 31.25rem;
       max-width: 100%;
       margin-inline: auto;
       &:nth-child(1) {
