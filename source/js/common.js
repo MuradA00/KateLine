@@ -23,6 +23,8 @@ let lightningRow = new Swiper(".lightning__row", {
     },
 });
 
+const worksItem = document.querySelector('.works-row__descr')
+
 let worksRow = new Swiper(".works__inner", {
     slidesPerView: 'auto',
     spaceBetween: 20,
@@ -31,6 +33,16 @@ let worksRow = new Swiper(".works__inner", {
       nextEl: '._btn-next',
       prevEl: '._btn-prev',
     },
+    on: {
+      slideChangeTransitionStart: function () {
+        worksItem.hide(0);
+        worksItem.removeClass('aos-init').removeClass('aos-animate');
+      },
+      slideChangeTransitionEnd: function () {
+        worksItem.show(0);
+        AOS.init();
+      },
+    }
 });
 
 let homeSlider = new Swiper(".home__inner", {
