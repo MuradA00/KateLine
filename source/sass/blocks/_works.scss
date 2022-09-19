@@ -94,6 +94,7 @@
       z-index: 100;
       transition: all 500ms ease-in-out;
       margin-top: 1rem;
+
     }
     &__wrapper {
       max-height: 332px;
@@ -126,7 +127,7 @@
     transition-delay: 1s !important;
     &__info {
       color: var(--clr-white);
-      font-size: 1.125rem;
+      font-size: 1rem;
       font-weight: 700;
     }
     &__button {
@@ -191,8 +192,22 @@
 
 @include max-media(51.5625em) {
   .works-row {
+    flex-wrap: nowrap !important;
+    &__descr {
+      left: 5px !important;
+      bottom: 15px !important;
+    }
+    &__image {
+      min-height: inherit;
+      max-width: inherit;
+    }
     &__wrapper {
-      max-width: 17.1875rem;
+      max-width: 21.5rem;
+      min-height: 31.25rem;
+      img, picture, source {
+        min-height: 31.25rem;
+        max-width: inherit;
+      }
       &:nth-child(3) {
         display: none;
       }
@@ -206,6 +221,9 @@
 @include min-media(51.5625em) {
   ._visible-image {
     display: none;
+  }
+  .works-row {
+
   }
   ._hidden-photos {
     display: none !important;
@@ -223,6 +241,8 @@
       padding: 13px 6px !important;
       max-width: 14.0625rem !important;
       max-height: 100% !important;
+      bottom: 15px !important;
+      left: 15px !important;
     }
     &__image {
       min-height: 31.25rem;
