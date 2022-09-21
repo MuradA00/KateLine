@@ -6,6 +6,9 @@
   }
   &__image {
     position: relative;
+    img, picture, source {
+      width: 100%;
+    }
   }
   &__icon {
     overflow: hidden;
@@ -74,6 +77,23 @@
 .home-slider {
   overflow: hidden;
   max-height: 42.375rem;
+  &__item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 100px;
+    &:nth-child(2) {
+      picture, img, source {
+        display: none;
+      }
+    }
+    &:nth-child(4) {
+      background-position: left !important;
+      picture, img, source {
+        display: none;
+      }
+    }
+  }
 }
 
 @include max-media(62.5em) {

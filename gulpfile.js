@@ -104,14 +104,14 @@ gulp.task("sprite", () => {
     .pipe(gulp.dest("build/img/sprite"));
 });
 
-// gulp.task("html", () => {
-//   return gulp.src("source/*.html")
-//     .pipe(posthtml([
-//       include()
-//     ]))
-//     // .pipe(htmlmin({ collapseWhitespace: true }))
-//     .pipe(gulp.dest("build"));
-// });
+gulp.task("html", () => {
+  return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
+    // .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
+});
 
 gulp.task("html", () => {
   return gulp.src("source/*.html")
