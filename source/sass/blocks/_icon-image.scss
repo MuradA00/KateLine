@@ -2,6 +2,8 @@
   padding: clamp(1.25rem, 1.875vw, 30px);
   background: var(--g-light);
   position: absolute;
+  width: auto;
+  height: fit-content;
   right: 0;
   bottom: 0;
   aspect-ratio: 1 / 1;

@@ -23,6 +23,8 @@ let lightningRow = new Swiper(".lightning__row", {
     },
 });
 
+AOS.init();
+
 const worksItem = document.querySelector('.works-row__descr')
 
 let worksRow = new Swiper(".works__inner", {
@@ -33,17 +35,13 @@ let worksRow = new Swiper(".works__inner", {
       nextEl: '._btn-next',
       prevEl: '._btn-prev',
     },
-    on: {
-      slideChangeTransitionStart: function () {
-        worksItem.hide(0);
-        worksItem.removeClass('aos-init').removeClass('aos-animate');
-      },
-      slideChangeTransitionEnd: function () {
-        worksItem.show(0);
-        AOS.init();
-      },
-    }
+    observer: true,
+    observeParents: true,
+    watchSlidesVisibility: true,
+    initialSlide: 0,
+
 });
+
 
 let homeSlider = new Swiper(".home__inner", {
     slidesPerView: 'auto',
@@ -86,7 +84,9 @@ function closeModal() {
   modal.classList.remove('--show-modal')
 }
 
-AOS.init();
+const worksItems = document.querySelectorAll('.works-row__wrapper');
+
+// AOS.init();
 
 const navLinks = document.querySelectorAll('.nav__link')
 
@@ -153,10 +153,3 @@ if (deviceWidth.matches) {
   window.addEventListener("resize", setHeight);
   setHeight();
 }
-
-
-
-
-
-
-

@@ -8,9 +8,12 @@
   &__image {
     position: relative;
     height: 100%;
+    max-width: 32rem;
+    border-radius: 0px 0 0 100px;
     img,
     picture {
       height: inherit;
+      border-radius: inherit;
       width: inherit;
     }
   }
@@ -37,6 +40,8 @@
     &__image {
       width: 100%;
       max-height: 21.375rem;
+      max-width: 40rem;
+      margin-inline: auto;
     }
     &__picture {
       max-height: inherit;

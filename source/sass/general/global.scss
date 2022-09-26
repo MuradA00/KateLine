@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: hidden;
   &::before {
     @include psevdo;
     width: 100%;
@@ -154,53 +155,6 @@ input[type="number"] {
   }
 }
 
-* {
-  scrollbar-color: #EDF3F6;
-
-  &::-webkit-scrollbar {
-    width: 9px;
-    box-shadow: none;
-    height: 100%;
-    display: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #3C93F0;
-    border-radius: 4px;
-    background-clip: padding-box;
-    border: 2px solid #EDF3F6;
-    box-shadow: none;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color:#EDF3F6;
-    cursor: pointer;
-    border-radius: 6px;
-    box-shadow: none;
-    height: 100%;
-  }
-
-  ::-webkit-scrollbar-button {
-    background-color: transparent;
-    box-shadow: none;
-    display: none;
-  }
-}
-
-
-.main-aside {
-  position: sticky;
-
-  @media (max-width: 1024px) {
-    width: 300px;
-    position: fixed;
-    left: -100%;
-  }
-}
 
 
 
