@@ -9,4 +9,7 @@
   aspect-ratio: 1 / 1;
   backdrop-filter: blur(20px);
   z-index: 10;
+  @include max-media(34.375em) {
+    padding: .8rem;
+  }
 }

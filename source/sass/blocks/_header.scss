@@ -37,6 +37,7 @@
     max-height: 100%;
     pointer-events: all;
   }
+
   &__options {
     grid-gap: clamp(30px, 3.75vw, 60px);
     margin-left: auto;
@@ -135,7 +136,7 @@
   }
   .header__options {
     max-width: 100%;
-    grid-gap: 0px 27px;
+    grid-gap: 9px 27px;
   }
   .header__lang-block {
     display: none;

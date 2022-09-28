@@ -155,7 +155,12 @@ input[type="number"] {
   }
 }
 
-
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fff !important;
+    background: #fff !important;
+  }
+}
 
 
 
