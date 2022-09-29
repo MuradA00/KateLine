@@ -6,6 +6,13 @@
   left: 0;
   z-index: 2000;
   padding: var(--20-spc) 0;
+  &__logo-icon {
+    width: 46px;
+    height: 49px;
+    background-image: url('../../img/header/logo-icon.png');
+    background-size: cover;
+    background-position: center;
+  }
   &__body {
     display: flex;
     align-items: center;
