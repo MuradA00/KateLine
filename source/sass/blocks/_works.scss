@@ -219,7 +219,7 @@
   }
 }
 
-@include min-media(51.5625em) {
+@include min-media(1242px) {
   ._visible-image {
     display: none;
   }
